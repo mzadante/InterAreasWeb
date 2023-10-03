@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Dante Martínez, Andres Winckler and Bootstrap contributors">
-    <title>Inter Areas Aplicación</title>
+    <script src="../tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+    <title>Editor Inter Areas </title>
     <!--Favicon-->
     <!--<link rel="icon" type="image/png" href="/favicon.png">-->
+    <!--Fuente Noto Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style-index.css">
-    <link rel="stylesheet" href="/css/login-modal.css">
+    <link rel="stylesheet" href="/css/editor.css">
     <!--Bootstrap 5.3.2-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -67,18 +72,15 @@
           </li>
         </ul>
       </div>
-    <!--Cabecera contiene una barra de navegacion modal-->  
+    <!--Cabecera-->  
     <header data-bs-theme="dark">
         <div class="collapse text-bg-dark" id="navbarHeader">
         <div class="container">
             <div class="row">
             <div class="col-sm-10 col-md-7 py-3">
-                <!--Titulo de bienvenida-->
                 <h4>Bienvenidos a la App Inter Áreas de Global Solutions</h4>
-                <!--Alguna Descripción-->
-                <p class="text-body-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ab cupiditate necessitatibus dolores, et voluptatem numquam, voluptates, aperiam eligendi provident cumque cum quisquam.</p>
+                <p class="text-body-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ab cupiditate necessitatibus dolores, et voluptatem numquam, voluptates, aperiam eligendi provident cumque cum quisquam vero perferendis repellat minus nisi. Consequuntur, at.</p>
             </div>
-            <!--Barra horizontal de navegación-->
             <div class="col-sm-2 offset-md-3 py-3">
                 <h4>Menú</h4>
                 <ul class="list-unstyled">
@@ -93,12 +95,15 @@
         </div>
         <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <button type="button" class="btn btn-dark" id="login" data-bs-toggle="modal" data-bs-target="#ModalForm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
-                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
-                    <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
-                  </svg> <strong>Login</strong>
-            </button>
+          <button type="button" class="btn btn-dark" id="volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-fill" viewBox="0 0 16 16">
+              <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z"/>
+            </svg><strong>  Volver</strong>
+          </button>
+            <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                Login  *************AQUI SE PODRIA IMPLEMENTAR DE COLOCAR UN MODAL PARA
+                SELECCIONAR EN QUE PAGINA SE QUIERE EDITAR EL CONTENIDO*************
+            </button> -->
             <!--Modal Login-->
             <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -110,13 +115,13 @@
                             <form>
                                 <div class="mb-3 mt-4">
                                     <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password">
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
                                 </div>
-                                <button type="submit" class="btn btn-Light mt-3" id="login-in">LOGIN</button>
+                                <button type="submit" class="btn btn-Light mt-3">LOGIN</button>
                                 <!-- <p>Not a member? <a href="#">Signup now</a></p> -->
                             </form>
                         </div>
@@ -132,122 +137,22 @@
     </header>
     
     <main>
-    <!--Carrusel Anuncios Importantes-->
-    <h1 class="d-flex justify-content-center mt-2 ">Anuncios Destacados</h1>
-    <section class="anuncio py-3 text-center container d-flex justify-content-center" >
-        <div id="carouselExampleDark" class="carousel">
-            <!--Botones del carousel-->
-            <!-- <div class="carousel-indicators ">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div> -->
-                                    <!--Primer Anuncio-->
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                <img src="/Assets/carrousel3.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="descripcion"></h5>
-                    <p class="descripcion"></p>
-                </div>
-                </div>
-                                    <!--Segundo Anuncio-->
-                <div class="carousel-item" data-bs-interval="2000">
-                <img src="/Assets/carrousel2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5></h5>
-                    <p></p>
-                </div>
-                </div>
-                                    <!--Tercer Anuncio-->
-                <div class="carousel-item">
-                <img src="/Assets/carrousel1.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5></h5>
-                    <p></p>
-                </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            </div>
-        </section> 
-    
+    <!--Editor de contenido con registro de usuario y roles-->
+            <div class="hero">
+				<h1>Inter Areas - RR-HH</h1>
+				<p>Editor de contenido de anuncios</p>
+			</div>
         <div class="album py-5 bg-body-tertiary">
         <div class="container">
-    
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
-            <div class="columna">
-                <div class="card shadow-sm">
-                    <img src="/Assets/beneficios.jpg" alt="">   
-                <div class="card-body">
-                    <p class="card-text" id="contenidoAqui"></p>
-                    <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Ver Info</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">29/9/2023</small>
-                    </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-8 col-md-10 g-12">
+                    <form id="formulario" class="formulario">
+				        <textarea id="editor" name="editor"></textarea>
+				        <button type="submit" class="btn btn-success" id="enviar">Enviar</button>
+			        </form>
                 </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="/Assets/novedades.jpg" alt="">   
-                <div class="card-body">
-                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga doloribus unde ratione porro dolor alias consequuntur! Nesciunt amet animi temporibus numquam quos, maiores accusantium placeat fuga aut! Reprehenderit, atque. Beatae?</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Ver Info</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">29/9/2023</small>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="/Assets/politicas.jpg" alt="">   
-                <div class="card-body">
-                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga doloribus unde ratione porro dolor alias consequuntur! Nesciunt amet animi temporibus numquam quos, maiores accusantium placeat fuga aut! Reprehenderit, atque. Beatae?</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Ver Info</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">29/9/2023</small>
-                    </div>
-                </div>
-                </div>
-            </div>
-    
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="/Assets/capacitaciones.jpg" alt="">   
-                <div class="card-body">
-                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga doloribus unde ratione porro dolor alias consequuntur! Nesciunt amet animi temporibus numquam quos, maiores accusantium placeat fuga aut! Reprehenderit, atque. Beatae?</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Ver Info</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-body-secondary">29/9/2023</small>
-                    </div>
-                </div>
-                </div>
-            </div>
             </div>
         </div>
-        </div>
-    
     </main>
     
     <footer class="site-info" aria-label="Sitio"  itemtype="https://schema.org/WPFooter" itemscope>
@@ -256,10 +161,9 @@
                 <span class="copyright">&copy; 2023 Pasantias UTN en GSolutions</span> &bull; Creado con Html5, Css3, JavaScript</div>
         </div>
     </footer>
-    <script src="/js/mostrarContenido.js"></script>
+    <script src="../js/editor.js"></script>
     <!--Bootstrap 5.3.2-->
-    <script src="/js/theme.js"></script>
-    <script src="/js/login.js"></script>
+    <script src="../js/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

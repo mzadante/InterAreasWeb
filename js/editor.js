@@ -1,3 +1,7 @@
+const btnVolver = document.getElementById('volver');
+btnVolver.addEventListener('click', () => {
+    window.location.href = '/view/adminGeneral.html';
+});
 
 tinymce.init({
     selector: '#editor',

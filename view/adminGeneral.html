@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Dante Martínez, Andres Winckler and Bootstrap contributors">
-    <script src="./tinymce/tinymce.min.js" referrerpolicy="origin"></script>
-    <title>Editor Inter Areas </title>
+    <title>Inter Areas Administrador</title>
     <!--Favicon-->
     <!--<link rel="icon" type="image/png" href="/favicon.png">-->
-    <!--Fuente Noto Sans-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style-index.css">
-    <link rel="stylesheet" href="/css/editor.css">
+    <link rel="stylesheet" href="/css/login-modal.css">
+    <link rel="stylesheet" href="/css/admin-gral.css">
     <!--Bootstrap 5.3.2-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -72,15 +68,18 @@
           </li>
         </ul>
       </div>
-    <!--Cabecera-->  
+    <!--Cabecera contiene una barra de navegacion modal-->  
     <header data-bs-theme="dark">
         <div class="collapse text-bg-dark" id="navbarHeader">
         <div class="container">
             <div class="row">
             <div class="col-sm-10 col-md-7 py-3">
+                <!--Titulo de bienvenida-->
                 <h4>Bienvenidos a la App Inter Áreas de Global Solutions</h4>
-                <p class="text-body-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ab cupiditate necessitatibus dolores, et voluptatem numquam, voluptates, aperiam eligendi provident cumque cum quisquam vero perferendis repellat minus nisi. Consequuntur, at.</p>
+                <!--Alguna Descripción-->
+                <p class="text-body-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ab cupiditate necessitatibus dolores, et voluptatem numquam, voluptates, aperiam eligendi provident cumque cum quisquam.</p>
             </div>
+            <!--Barra horizontal de navegación-->
             <div class="col-sm-2 offset-md-3 py-3">
                 <h4>Menú</h4>
                 <ul class="list-unstyled">
@@ -95,16 +94,33 @@
         </div>
         <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <!-- <a href="#" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
-                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
-                    <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
-                  </svg>
-            <strong>Login</strong>
-            </a> -->
-            <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
-                Login
-            </button> -->
+            <button type="button" class="btn btn-dark" id="volver">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-fill" viewBox="0 0 16 16">
+                <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z"/>
+              </svg><strong>  Volver</strong>
+            </button>
+
+            <button type="button" class="btn btn-dark" id="registrar-user" data-bs-toggle="modal" data-bs-target="#ModalForm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
+              </svg><strong>  Registrar User</strong>
+            </button>
+
+            <button type="button" class="btn btn-dark" id="editor-page">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg><strong> Editor Contenido</strong>
+            </button>
+
+            <button type="button" class="btn btn-dark" id="configuracion">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+              </svg><strong> Configuracion</strong>
+            </button>
+
             <!--Modal Login-->
             <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -112,17 +128,29 @@
                     <div class="modal-body">
                         <button type="button" class="btn-close btn-close-white " data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="myform bg-dark">
-                            <h1 class="text-center">Hola Admin</h1>
+                            <h1 class="text-center">Crear Cuenta</h1>
                             <form>
                                 <div class="mb-3 mt-4">
+                                  <label for="exampleInputNombre" class="form-label">Nombre</label>
+                                  <input type="text" class="form-control" id="nombre-user" aria-describedby="nombreHelp">
+                                </div>
+                                <div class="mb-3 mt-4">
+                                  <label for="exampleInputApellido" class="form-label">Apellido</label>
+                                  <input type="text" class="form-control" id="apellido-user" aria-describedby="apellidoHelp">
+                                </div>
+                                <div class="mb-3 mt-4">
                                     <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" id="email-user" aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <input type="password" class="form-control" id="password-user">
                                 </div>
-                                <button type="submit" class="btn btn-Light mt-3">LOGIN</button>
+                                <div class="mb-3 mt-4">
+                                  <label for="rol" class="form-label">Rol</label>
+                                  <input type="text" class="form-control" id="rol-user" aria-describedby="rolHelp">
+                                </div>
+                                <button type="submit" class="btn btn-info" id="registrar-usuario">Crear User</button>
                                 <!-- <p>Not a member? <a href="#">Signup now</a></p> -->
                             </form>
                         </div>
@@ -130,41 +158,37 @@
                   </div>
                 </div>
             </div>
+            <!--Fin Modal Login-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
         </div>
         </div>
     </header>
-    
     <main>
-    <!--Editor de contenido con registro de usuario y roles-->
-            <div class="hero">
-				<h1>Inter Areas - RR-HH</h1>
-				<p>Editor de contenido de anuncios</p>
-			</div>
+        <!--Carrusel Anuncios Importantes-->
+        <h1 class="d-flex justify-content-center mt-2 ">Administrador</h1>
+        <section class="anuncio py-3 text-center container d-flex justify-content-center" >
+        
         <div class="album py-5 bg-body-tertiary">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-8 col-md-10 g-12">
-                    <form id="formulario" class="formulario">
-				        <textarea id="editor" name="editor"></textarea>
-				        <button type="submit" class="btn btn-success" id="enviar">Enviar</button>
-			        </form>
-                </div>
+            <div class="container">
+                
             </div>
-        </div>
+        </div>            
+        
     </main>
-    
+        
     <footer class="site-info" aria-label="Sitio"  itemtype="https://schema.org/WPFooter" itemscope>
         <div class="inside-site-info grid-container">
-                            <div class="copyright-bar">
+            <div class="copyright-bar">
                 <span class="copyright">&copy; 2023 Pasantias UTN en GSolutions</span> &bull; Creado con Html5, Css3, JavaScript</div>
-        </div>
-    </footer>
-    <script src="./js/editor.js"></script>
-    <!--Bootstrap 5.3.2-->
-    <script src="/js/theme.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
-</html>
+            </div>
+        </footer>
+        <script src="/js/adminGral.js"></script>
+        <script src="/js/mostrarContenido.js"></script>
+        <!--Bootstrap 5.3.2-->
+        <script src="/js/theme.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    
