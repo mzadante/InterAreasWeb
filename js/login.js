@@ -7,11 +7,12 @@ formulario.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('Enviando formulario');
     
-    const email = document.getElementById('email').value;
+    const usuario = document.getElementById('usuario').value;
     const password = document.getElementById('password').value;
     
-    console.log(email, password);
-    if (email === 'admin@admin.com' && password === 'admin') {
+    console.log(usuario, password);
+    if (usuario === 'admin' && password === 'admin') {
+        //mandar tb a la bd
         window.location.href = '/view/adminGeneral.html';
     }
 });

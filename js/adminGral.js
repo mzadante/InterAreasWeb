@@ -22,3 +22,17 @@ const btnEditorContenido = document.getElementById('editor-page');
 btnEditorContenido.addEventListener('click', () => {
     window.location.href = '/view/editor.html';
 });
+//obtengo los datos del formulario
+const nombreUser = document.getElementById('nombre-user').value;
+const apellidoUser = document.getElementById('apellido-user').value;
+const passwordUser = document.getElementById('password-user').value;
+const rolUser = document.getElementById('rol-user').value;
+//preparo para mandar a la base de datos mysql usuarios, donde tengo los
+//campos: nombre, apellido, password, rol
+const btnCrearUser = document.getElementById('crear-user');
+btnCrearUser.addEventListener('click', () => {
+    //mandar a la base de datos
+    
+    //window.location.href = '/view/adminGeneral.html';
+});
+
