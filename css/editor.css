@@ -44,3 +44,7 @@ body {
 .tox-promotion{
 	display: none !important;
 }
+
+.pie{
+	border: 2px solid #000;
+}
