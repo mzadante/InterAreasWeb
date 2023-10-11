@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var contenido = localStorage.getItem('contenidoTinyMCE');
+    console.log(contenido);
     if (contenido) {
         document.getElementById('contenidoAqui').innerHTML = 
         contenido + `

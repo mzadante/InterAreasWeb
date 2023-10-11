@@ -95,6 +95,9 @@
   .copyright{
     color: #fff;
   }
+  .card-text img{
+    object-fit: contain;
+  }
   /* @media (min-width: 1200px){
     .container{
         max-width: 900px;
